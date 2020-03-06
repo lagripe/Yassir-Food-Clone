@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:yassir_food_prototype/config/style.dart';
 
 import 'HomePage.dart';
 
@@ -43,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        color: Color(0xfffcfbfc),
+        color: CustomStyle.splashBackgroundColor,
         child: Center(
           child: Image(
             width: size.height / 6,
