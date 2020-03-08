@@ -56,10 +56,11 @@ class CustomAppBars {
     );
   }
 
-  static AppBar exploreAppBar() {
+  static AppBar exploreAppBar(TextEditingController controller) {
     return AppBar(
       automaticallyImplyLeading: false,
       title: TextField(
+        controller: controller,
         decoration: InputDecoration(
             hintText: "Search for restaurantsn, dishes...",
             hintStyle: TextStyle(

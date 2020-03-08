@@ -8,5 +8,21 @@ class CustomStyle {
   static TextStyle tabStyle() {
       return TextStyle(fontSize: 12, fontFamily: "Sofia");}
   static TextStyle appBarStyle() {
-      return TextStyle(fontSize: 18, fontFamily: "Sofia",fontWeight: FontWeight.w700,color: Colors.black);}
+      return TextStyle(fontSize: 18, fontFamily: "Sofia",fontWeight: FontWeight.w500,color: Colors.black);}
+  static TextStyle contentRedStyle() {
+      return TextStyle(fontSize: 18, fontFamily: "Sofia",fontWeight: FontWeight.w700,color: selectedTabColor);}
+  static TextStyle contentStyle() {
+      return TextStyle(fontSize: 15, fontFamily: "Sofia",fontWeight: FontWeight.w100,color: Color(0xff4a4a4a));}
+  static TextStyle cardStyleRight() {
+      return TextStyle(fontSize: 12, fontFamily: "Sofia",fontWeight: FontWeight.w500,color: Colors.white);}
+  static TextStyle cardStyleLeft() {
+      return TextStyle(fontSize: 22, fontFamily: "Sofia",fontWeight: FontWeight.w700,color: Colors.white);}
+  static TextStyle restaurantName() {
+      return TextStyle(fontSize: 24, fontFamily: "Sofia",fontWeight: FontWeight.w800,color: Colors.black);}
+  static TextStyle restaurantAdrs() {
+      return TextStyle(fontSize: 14, fontFamily: "Sofia",fontWeight: FontWeight.w400,color: Color(0xffb5babd));}
+  static TextStyle restaurantOptions() {
+      return TextStyle(fontSize: 14, fontFamily: "Sofia",fontWeight: FontWeight.w700,color: Colors.black);}
+  static TextStyle categoryNameStyle() {
+      return TextStyle(fontSize: 14, fontFamily: "Sofia",fontWeight: FontWeight.w400,color: Colors.black);}
 }
