@@ -12,13 +12,19 @@ class MaklaTabViewItem extends StatefulWidget {
   @override
   _MaklaTabViewItemState createState() =>
       _MaklaTabViewItemState(restaurants: restaurants, location: location);
+  
 }
 
 class _MaklaTabViewItemState extends State<MaklaTabViewItem> {
   String location;
   List<Restaurant> restaurants;
   _MaklaTabViewItemState({@required this.restaurants, @required this.location});
-
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -34,25 +40,12 @@ class _MaklaTabViewItemState extends State<MaklaTabViewItem> {
                 itemBuilder: (context, index) {
                   int r = index % 18;
                   return InkWell(
-                    onTap: () => Navigator.push(
+                    onTap: () => Manager.customPageRoute(
                         context,
-                        PageRouteBuilder(
-                            transitionDuration: Duration(milliseconds: 200),
-                            transitionsBuilder:
-                                (context, animation, secAnimation, child) {
-                              var begin = Offset(1.0, 0.0);
-                              var end = Offset.zero;
-                              var tween = Tween(begin: begin, end: end);
-                              var offsetAnimation = animation.drive(tween);
-                              return SlideTransition(
-                                position: offsetAnimation,
-                                child: child,
-                              );
-                            },
-                            pageBuilder: (context, animation, secAnimation) =>
-                                RestaurantPage(
-                                  restaurant: snapshot.data[index],
-                                ))),
+                        RestaurantPage(restaurant: snapshot.data[index]),
+                        Offset(1.0, 0.0),
+                        Offset.zero,
+                        Duration(milliseconds: 400)),
                     child: Padding(
                       padding:
                           const EdgeInsets.only(top: 10, right: 10, left: 10),

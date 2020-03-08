@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yassir_food_prototype/config/classes.dart';
+import 'package:yassir_food_prototype/config/manager.dart';
 import 'package:yassir_food_prototype/config/style.dart';
+import 'package:yassir_food_prototype/pages/RestaurantCategory.dart';
 
 class RestaurantPage extends StatefulWidget {
   Restaurant restaurant;
@@ -83,10 +85,10 @@ class _RestaurantPageState extends State<RestaurantPage> {
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
-                                  blurRadius: 5,
+                                  blurRadius: 2,
                                   spreadRadius: .5,
                                   color: Colors.grey[300],
-                                  offset: Offset(0, 3))
+                                  offset: Offset(0, 2))
                             ]),
                         height:
                             (headerHeight - (headerHeight * 3.65 / 5)) * 1.75,
@@ -182,56 +184,65 @@ class _RestaurantPageState extends State<RestaurantPage> {
           itemCount: menu.length,
           itemBuilder: (context, index) {
             int r = index % 18;
-            return Container(
-              //height: MediaQuery.of(context).size.height - headerHeight - 5 / 6,
-              decoration: BoxDecoration(
-                border: Border(
-                    bottom: BorderSide(
-                  width: .2,
-                  color: Colors.grey,
-                )),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                    left: 5.0, right: 5.0, top: 10, bottom: 10),
-                child: Row(
-                  children: <Widget>[
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        ClipOval(
-                          //borderRadius: BorderRadius.circular(25),
-                          child: FadeInImage(
-                            fit: BoxFit.fill,
-                            image: NetworkImage(menu[index].banner),
-                            placeholder:
-                                AssetImage("assets/img/placeholders/img$r.jpg"),
-                            width: 50,
-                            height: 50,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: Text(
-                            menu[index].nameCat,
-                            style: CustomStyle.categoryNameStyle(),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+            print(index);
+            return InkWell(
+              onTap: () => Manager.customPageRoute(
+                  context,
+                  RestaurantCategory(restaurant: restaurant,index_cat:index),
+                  Offset(1, 0),
+                  Offset.zero,
+                  Duration(milliseconds: 400)),
+              child: Container(
+                //height: MediaQuery.of(context).size.height - headerHeight - 5 / 6,
+                decoration: BoxDecoration(
+                  border: Border(
+                      bottom: BorderSide(
+                    width: .2,
+                    color: Colors.grey,
+                  )),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      left: 5.0, right: 5.0, top: 10, bottom: 10),
+                  child: Row(
+                    children: <Widget>[
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            size: 12,
-                            color: Colors.black,
+                          ClipOval(
+                            //borderRadius: BorderRadius.circular(25),
+                            child: FadeInImage(
+                              fit: BoxFit.fill,
+                              image: NetworkImage(menu[index].banner),
+                              placeholder: AssetImage(
+                                  "assets/img/placeholders/img$r.jpg"),
+                              width: 50,
+                              height: 50,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: Text(
+                              menu[index].nameCat,
+                              style: CustomStyle.categoryNameStyle(),
+                            ),
                           ),
                         ],
                       ),
-                    )
-                  ],
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              size: 12,
+                              color: Colors.black,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             );

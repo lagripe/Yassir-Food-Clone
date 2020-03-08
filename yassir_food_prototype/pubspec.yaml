@@ -56,7 +56,12 @@ flutter:
           weight: 300
         - asset: assets/fonts/sofia_pro_light.ttf
           weight: 100
-
+    - family: ES
+      fonts:
+        - asset: assets/fonts/esphimere_font.otf
+          weight: 200
+        - asset: assets/fonts/esphimere_semi_bold.otf
+          weight: 400
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:yassir_food_prototype/config/manager.dart';
 import 'package:yassir_food_prototype/config/style.dart';
 
 import 'HomePage.dart';
@@ -14,28 +15,9 @@ class _SplashScreenState extends State<SplashScreen> {
   initState() {
     super.initState();
     Timer(Duration(seconds: 1), () {
+      Manager.customPageRoute(context, HomePage(), Offset(1.0, 0.0),
+          Offset.zero, Duration(milliseconds: 400));
       //Navigator.pop(context);
-      Navigator.push(
-          context,
-          PageRouteBuilder(
-              transitionDuration: Duration(milliseconds: 400),
-              transitionsBuilder: (BuildContext context,
-                  Animation<double> animation,
-                  Animation<double> secAnimation,
-                  Widget child) {
-                var begin = Offset(1.0, 0);
-                var end = Offset.zero;
-                var tween = Tween(begin: begin, end: end);
-                var offsetAnimation = animation.drive(tween);
-                return SlideTransition(
-                  position: offsetAnimation,
-                  child: child,
-                );
-              },
-              pageBuilder: (BuildContext context, Animation<double> animation,
-                  Animation<double> secAnimation) {
-                return HomePage();
-              }));
     });
   }
 

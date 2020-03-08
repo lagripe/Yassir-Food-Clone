@@ -28,19 +28,33 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
+    List<Food> food = [
+      Food(nameFood: "Barquette de frites",price: "150.00"),
+      Food(nameFood: "Assiete de frites",price: "200.00"),
+      Food(nameFood: "Pizza poulé",price: "600.00"),
+      Food(nameFood: "Pizza Mega",price: "1800.00"),
+      Food(nameFood: "Barquette de frites",price: "150.00"),
+      Food(nameFood: "Assiete de frites",price: "200.00"),
+      Food(nameFood: "Pizza poulé",price: "600.00"),
+      Food(nameFood: "Pizza Mega",price: "1800.00"),
+      Food(nameFood: "Barquette de frites",price: "150.00"),
+      Food(nameFood: "Assiete de frites",price: "200.00"),
+      Food(nameFood: "Pizza poulé",price: "600.00"),
+      Food(nameFood: "Pizza Mega",price: "1800.00"),
+    ];
      List<Category> menu = [
-      Category(banner: "https://glasrestaurant.ie/assets/img/Glas_restaurant_food_01.jpg?v2",food: [],nameCat: "Desserts",idCat: ""),
-      Category(banner: "http://www.gorwelion.co.uk/wp-content/uploads/2015/07/fine-dining-01.jpg",food: [],nameCat: "Entrées chaudes",idCat: ""),
+      Category(banner: "https://glasrestaurant.ie/assets/img/Glas_restaurant_food_01.jpg?v2",food: food,nameCat: "Desserts",idCat: ""),
+      Category(banner: "http://www.gorwelion.co.uk/wp-content/uploads/2015/07/fine-dining-01.jpg",food: food,nameCat: "Entrées chaudes",idCat: ""),
+      Category(banner: "https://st4.depositphotos.com/1959135/22184/i/1600/depositphotos_221844198-stock-photo-grilled-chicken-legs-tomato-sauce.jpg",food: food,nameCat: "Entrées froids",idCat: ""),
+      Category(banner: "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_960_720.jpg",food: food,nameCat: "Pizza",idCat: ""),
+      Category(banner: "http://www.gorwelion.co.uk/wp-content/uploads/2015/07/fine-dining-01.jpg",food: food,nameCat: "Plats",idCat: ""),
+      Category(banner: "https://media.timeout.com/images/105326979/750/422/image.jpg",food: food,nameCat: "Pâtes",idCat: ""),
+      Category(banner: "https://glasrestaurant.ie/assets/img/Glas_restaurant_food_01.jpg?v2",food: food,nameCat: "Desserts",idCat: ""),
+      Category(banner: "http://www.gorwelion.co.uk/wp-content/uploads/2015/07/fine-dining-01.jpg",food: food,nameCat: "Entrées chaudes",idCat: ""),
       Category(banner: "https://st4.depositphotos.com/1959135/22184/i/1600/depositphotos_221844198-stock-photo-grilled-chicken-legs-tomato-sauce.jpg",food: [],nameCat: "Entrées froids",idCat: ""),
-      Category(banner: "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_960_720.jpg",food: [],nameCat: "Pizza",idCat: ""),
-      Category(banner: "http://www.gorwelion.co.uk/wp-content/uploads/2015/07/fine-dining-01.jpg",food: [],nameCat: "Plats",idCat: ""),
-      Category(banner: "https://media.timeout.com/images/105326979/750/422/image.jpg",food: [],nameCat: "Pâtes",idCat: ""),
-      Category(banner: "https://glasrestaurant.ie/assets/img/Glas_restaurant_food_01.jpg?v2",food: [],nameCat: "Desserts",idCat: ""),
-      Category(banner: "http://www.gorwelion.co.uk/wp-content/uploads/2015/07/fine-dining-01.jpg",food: [],nameCat: "Entrées chaudes",idCat: ""),
-      Category(banner: "https://st4.depositphotos.com/1959135/22184/i/1600/depositphotos_221844198-stock-photo-grilled-chicken-legs-tomato-sauce.jpg",food: [],nameCat: "Entrées froids",idCat: ""),
-      Category(banner: "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_960_720.jpg",food: [],nameCat: "Pizza",idCat: ""),
-      Category(banner: "http://www.gorwelion.co.uk/wp-content/uploads/2015/07/fine-dining-01.jpg",food: [],nameCat: "Plats",idCat: ""),
-      Category(banner: "https://media.timeout.com/images/105326979/750/422/image.jpg",food: [],nameCat: "Pâtes",idCat: ""),
+      Category(banner: "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_960_720.jpg",food: food,nameCat: "Pizza",idCat: ""),
+      Category(banner: "http://www.gorwelion.co.uk/wp-content/uploads/2015/07/fine-dining-01.jpg",food: food,nameCat: "Plats",idCat: ""),
+      Category(banner: "https://media.timeout.com/images/105326979/750/422/image.jpg",food: food,nameCat: "Pâtes",idCat: ""),
     ];
     List<Restaurant> restaurants = [
       Restaurant(adrs: "Staouali, Algérie",banner: "https://st4.depositphotos.com/1959135/22184/i/1600/depositphotos_221844198-stock-photo-grilled-chicken-legs-tomato-sauce.jpg",idRestaurant: "",nameRestaurant: "La Famillie",rating: 4.5,isOpen: true,close_at: "22:00",delivers_in: "40-45 Mins",menu: menu),
