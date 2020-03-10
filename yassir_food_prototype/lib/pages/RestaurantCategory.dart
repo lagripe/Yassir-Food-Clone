@@ -1,6 +1,9 @@
 import 'package:yassir_food_prototype/config/classes.dart';
 import 'package:flutter/material.dart';
+import 'package:yassir_food_prototype/config/manager.dart';
 import 'package:yassir_food_prototype/config/style.dart';
+
+import 'AddToCartPage.dart';
 
 class RestaurantCategory extends StatefulWidget {
   Restaurant restaurant;
@@ -54,7 +57,7 @@ class _RestaurantCategoryState extends State<RestaurantCategory> {
         slivers: <Widget>[
           SliverAppBar(
               leading: InkWell(
-                onTap: ()=>Navigator.pop(context),
+                onTap: () => Navigator.pop(context),
                 child: Icon(
                   Icons.arrow_back_ios,
                   size: 25,
@@ -104,7 +107,7 @@ class _RestaurantCategoryState extends State<RestaurantCategory> {
                 ),
               )),
           getFood(context, restaurant.menu[index_cat].food,
-              MediaQuery.of(context).size.height, false)
+              MediaQuery.of(context).size.height, restaurant.isOpen)
         ],
       ),
     );
@@ -137,7 +140,7 @@ class _RestaurantCategoryState extends State<RestaurantCategory> {
                       style: CustomStyle.foodNameStyle(),
                     ),
                     Text(
-                      'DZD ${food[index].price}',
+                      'DZD ${food[index].price.toStringAsFixed(2)}',
                       style: CustomStyle.priceStyle(),
                     )
                   ],
@@ -150,6 +153,16 @@ class _RestaurantCategoryState extends State<RestaurantCategory> {
                         content: Text("Restaurant is closed"),
                         duration: Duration(seconds: 1),
                       ));
+                    else
+                      Manager.customPageRoute(
+                          context,
+                          AddToCartPage(
+                              idRes: restaurant.idRestaurant,
+                              idCat: restaurant.menu[index_cat].idCat,
+                              food: food[index]),
+                          Offset(0, 0),
+                          Offset.zero,
+                          Duration(milliseconds: 300));
                   },
                   child: Container(
                     decoration: BoxDecoration(

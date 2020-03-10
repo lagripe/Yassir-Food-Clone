@@ -5,6 +5,8 @@ import 'package:yassir_food_prototype/config/style.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'package:yassir_food_prototype/pages/RestaurantPage.dart';
 
+import 'errorWidgets.dart';
+
 class MaklaTabViewItem extends StatefulWidget {
   String location;
   List<Restaurant> restaurants;
@@ -12,7 +14,6 @@ class MaklaTabViewItem extends StatefulWidget {
   @override
   _MaklaTabViewItemState createState() =>
       _MaklaTabViewItemState(restaurants: restaurants, location: location);
-  
 }
 
 class _MaklaTabViewItemState extends State<MaklaTabViewItem> {
@@ -23,8 +24,8 @@ class _MaklaTabViewItemState extends State<MaklaTabViewItem> {
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    
   }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -192,53 +193,14 @@ class _MaklaTabViewItemState extends State<MaklaTabViewItem> {
                   );
                 });
           } else {
-            return noRestaurants(context);
+            return ErrorWidgets.empty_or_notFound(context,"No restaurants available","No restaurants available in your location, please \n check with some other locations","shop");
           }
         },
       ),
     );
   }
 
-  Widget noRestaurants(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      color: CustomStyle.scaffoldBackgroundColor,
-      child: Column(
-        children: <Widget>[
-          Flexible(
-            child: Container(),
-            flex: 1,
-          ),
-          Flexible(
-              flex: 2,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Image(
-                    image: AssetImage("assets/img/shop.png"),
-                    width: size.width / 2.5,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "No restaurants available",
-                    style: CustomStyle.contentRedStyle(),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "No restaurants available in your location, please \n check with some other locations",
-                    style: CustomStyle.contentStyle(),
-                    textAlign: TextAlign.center,
-                  )
-                ],
-              )),
-        ],
-      ),
-    );
-  }
+  
 
   Widget getRate(double rate) {
     int count = rate.floor();

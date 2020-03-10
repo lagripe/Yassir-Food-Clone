@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Food {
-  String nameFood, price;
-  Food({@required this.nameFood, @required this.price});
+  String idFood, nameFood;
+  double price;
+  Food({@required this.idFood, @required this.nameFood, @required this.price});
 }
 
 class Category {
@@ -16,7 +17,7 @@ class Category {
 }
 
 class Restaurant {
-  String idRestaurant, nameRestaurant, banner, adrs, close_at,delivers_in;
+  String idRestaurant, nameRestaurant, banner, adrs, close_at, delivers_in;
   double rating;
   bool isOpen;
   List<Category> menu;
@@ -31,4 +32,16 @@ class Restaurant {
       this.menu,
       this.close_at,
       this.delivers_in});
+}
+
+class Order {
+  Food food;
+  int quantity;
+  Order({@required this.food, @required this.quantity});
+}
+
+class Cart {
+  Restaurant restaurant;
+  List<Order> orders = List<Order>();
+  Cart({@required this.restaurant, @required this.orders});
 }

@@ -188,8 +188,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
             return InkWell(
               onTap: () => Manager.customPageRoute(
                   context,
-                  RestaurantCategory(restaurant: restaurant,index_cat:index),
-                  Offset(1, 0),
+                  RestaurantCategory(restaurant: restaurant, index_cat: index),
+                  Offset(0,1),
                   Offset.zero,
                   Duration(milliseconds: 400)),
               child: Container(

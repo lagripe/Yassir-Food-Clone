@@ -29,8 +29,8 @@ class _SplashScreenState extends State<SplashScreen> {
         color: CustomStyle.splashBackgroundColor,
         child: Center(
           child: Image(
-            width: size.height / 6,
-            height: size.height / 6,
+            width: size.height / 3,
+            height: size.height / 3,
             image: AssetImage("assets/img/splash_icon.png"),
           ),
         ),

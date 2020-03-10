@@ -121,4 +121,12 @@ class CustomStyle {
       color: Colors.black,
     );
   }
+  static TextStyle foodNameAddCartStyle() {
+    return TextStyle(
+      fontSize: 22,
+      fontFamily: "Sofia",
+      fontWeight: FontWeight.w800,
+      color: Color(0xFFEC0400),
+    );
+  }
 }
