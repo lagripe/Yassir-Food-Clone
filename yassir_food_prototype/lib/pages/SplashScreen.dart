@@ -15,9 +15,10 @@ class _SplashScreenState extends State<SplashScreen> {
   initState() {
     super.initState();
     Timer(Duration(seconds: 1), () {
+      Navigator.pop(context);
       Manager.customPageRoute(context, HomePage(), Offset(1.0, 0.0),
           Offset.zero, Duration(milliseconds: 400));
-      //Navigator.pop(context);
+      
     });
   }
 

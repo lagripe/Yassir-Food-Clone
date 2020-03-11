@@ -41,4 +41,6 @@ class ErrorWidgets{
       ),
     );
   }
+
+  static noImplementation() => Scaffold(body: Container(child: Center(child: Text("Not implemented yet!"),),),);
 }

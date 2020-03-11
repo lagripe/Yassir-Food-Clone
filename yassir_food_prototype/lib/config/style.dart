@@ -89,6 +89,7 @@ class CustomStyle {
       color: Colors.white,
     );
   }
+
   static TextStyle catNameStyleCollapsed() {
     return TextStyle(
       fontSize: 14,
@@ -97,6 +98,7 @@ class CustomStyle {
       color: Colors.black,
     );
   }
+
   static TextStyle addToCartStyle() {
     return TextStyle(
       fontSize: 12,
@@ -105,6 +107,7 @@ class CustomStyle {
       color: selectedTabColor,
     );
   }
+
   static TextStyle priceStyle() {
     return TextStyle(
       fontSize: 14,
@@ -113,6 +116,7 @@ class CustomStyle {
       color: Colors.orange,
     );
   }
+
   static TextStyle foodNameStyle() {
     return TextStyle(
       fontSize: 14,
@@ -121,12 +125,39 @@ class CustomStyle {
       color: Colors.black,
     );
   }
+
   static TextStyle foodNameAddCartStyle() {
     return TextStyle(
       fontSize: 22,
       fontFamily: "Sofia",
       fontWeight: FontWeight.w800,
       color: Color(0xFFEC0400),
+    );
+  }
+
+  static TextStyle accountItemStyle() {
+    return TextStyle(
+      fontSize: 13,
+      fontFamily: "Sofia",
+      fontWeight: FontWeight.w400,
+      color: Colors.black,
+    );
+  }
+
+  static TextStyle headerEdit() {
+    return TextStyle(
+      fontSize: 13,
+      fontFamily: "Sofia",
+      fontWeight: FontWeight.w700,
+      color: Colors.grey[500],
+    );
+  }
+  static TextStyle textFieldTextStyle() {
+    return TextStyle(
+      fontSize: 13,
+      fontFamily: "Sofia",
+      fontWeight: FontWeight.w400,
+      color: Colors.black,
     );
   }
 }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:yassir_food_prototype/components/CartTabViewItem.dart';
 import 'package:yassir_food_prototype/components/CustomAppBars.dart';
 import 'package:yassir_food_prototype/components/CustomTab.dart';
-import 'package:yassir_food_prototype/components/errorWidgets.dart';
-import 'package:yassir_food_prototype/config/classes.dart';
+import 'package:yassir_food_prototype/components/myAccountTabViewItem.dart';
 import 'package:yassir_food_prototype/config/style.dart';
 import 'package:yassir_food_prototype/components/MaklaTabViewItem.dart';
+import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 
 import '../staticData.dart';
 
@@ -39,28 +40,52 @@ class _HomePageState extends State<HomePage>
               : _currentIndex == 2
                   ? CustomAppBars.simpleAppBar("Cart")
                   : CustomAppBars.simpleAppBar("My account"),
-      body: TabBarView(
-          physics: NeverScrollableScrollPhysics(),
-          controller: _tabController,
-          children: [
-            MaklaTabViewItem(
-              restaurants: StaticData.restaurants,
-              location: "",
-            ),
-            Container(
-              color: CustomStyle.scaffoldBackgroundColor,
-              child: Center(
-                child: Text(
-                  "Search for restaurants or dishes.",
-                  style: CustomStyle.restaurantAdrs(),
+      body: WillPopScope(
+        onWillPop: (){return showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Confirm Exit"),
+            content: Text("Are you sure you want to exit?"),
+            actions: <Widget>[
+              FlatButton(
+                child: Text("YES"),
+                onPressed: () {
+                  SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+                },
+              ),
+              FlatButton(
+                child: Text("NO"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+            )
+          ],
+        );
+      }
+    );},
+        child: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
+            controller: _tabController,
+            children: [
+              MaklaTabViewItem(
+                restaurants: StaticData.restaurants,
+                location: "",
+              ),
+              Container(
+                color: CustomStyle.scaffoldBackgroundColor,
+                child: Center(
+                  child: Text(
+                    "Search for restaurants or dishes.",
+                    style: CustomStyle.restaurantAdrs(),
+                  ),
                 ),
               ),
-            ),
-            CartTabViewItem(),
-            Container(
-              color: CustomStyle.scaffoldBackgroundColor,
-            ),
-          ]),
+              CartTabViewItem(),
+              MyAccountTabViewItem()
+            ]),
+      ),
       bottomNavigationBar: TabBar(
           unselectedLabelColor: CustomStyle.unselectedTabColor,
           labelColor: CustomStyle.selectedTabColor,

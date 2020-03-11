@@ -1,4 +1,7 @@
 
+import 'package:flutter/material.dart';
+import 'package:yassir_food_prototype/config/manager.dart';
+
 import 'config/classes.dart';
 
 class StaticData
@@ -47,4 +50,10 @@ class StaticData
     ];
     static Cart  cart = Cart(restaurant: restaurants[2],orders: orders);
     
+    static String appId = "com.yatechnologies.yassirfoodclient";
+    static String firstName = "Mohamed";
+    static String lastName = "BESSEKRI";
+    static String email = "root@gmail.com";
+    static String phone = "660 66 00 00";
+  
 }

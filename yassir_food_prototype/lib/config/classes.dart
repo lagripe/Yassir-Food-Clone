@@ -45,3 +45,19 @@ class Cart {
   List<Order> orders = List<Order>();
   Cart({@required this.restaurant, @required this.orders});
 }
+
+class MyAccountItem {
+  String iconPath, header;
+  Widget clickable;
+  IconData replacement;
+  bool colored = false;
+  Widget callback;
+  MyAccountItem(
+      {@required this.iconPath,
+      @required this.header,
+      @required this.clickable,
+      @required this.replacement,
+      @required this.colored,
+      @required this.callback
+      });
+}

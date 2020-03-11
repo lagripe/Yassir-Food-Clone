@@ -65,8 +65,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
                           ),
                         ),
                         Icon(
-                          Icons.menu,
-                          size: 25,
+                          Icons.favorite_border,
+                          size: 30,
                           color: Colors.white,
                         ),
                       ],
