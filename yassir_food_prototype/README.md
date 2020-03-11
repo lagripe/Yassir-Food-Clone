@@ -1,16 +1,31 @@
-# yassir_food_prototype
+# Yassir Food App Clone
+This app is a clone of the original [YASSIR Food](https://play.google.com/store/apps/details?id=com.yatechnologies.yassirfoodclient&hl=en) app
 
-A new Flutter project.
+# Show me some ❤️ and star the repo to support the project.
 
-## Getting Started
+# Note
+- The data used within the app is static & generated one
+- This repository is still under development and I will continue to add more features to it.
 
-This project is a starting point for a Flutter application.
+# Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+<p align="center">
+<img src="../screenshots/s1.jpg" width="300" height="600">
+<img src="../screenshots/s3.jpg" width="300" height="600">
+<img src="../screenshots/s2.jpg" width="300" height="600">
+<video src="../screenshots/demo.mp4" width="300" height="600" controls preload></video>
+</p>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+# Getting started
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. [Setup Flutter](https://flutter.dev/docs/get-started/install)
+
+2. Clone the repo
+
+    ```
+    $ git clone https://github.com/lagripe/Yassir-Food-Clone
+    $ cd Yassir-Food-Clone/
+    ```
+3. Run
+        `$ flutter run`
+
