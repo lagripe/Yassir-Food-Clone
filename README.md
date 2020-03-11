@@ -10,10 +10,10 @@ This app is a clone of the original [YASSIR Food](https://play.google.com/store/
 # Screenshots
 
 <p align="center">
-<img src="../screenshots/s1.jpg" width="300" height="600">
-<img src="../screenshots/s3.jpg" width="300" height="600">
-<img src="../screenshots/s2.jpg" width="300" height="600">
-<video src="../screenshots/demo.mp4" width="300" height="600" controls preload></video>
+<img src="screenshots/s1.jpg" width="300" height="600">
+<img src=".screenshots/s3.jpg" width="300" height="600">
+<img src="screenshots/s2.jpg" width="300" height="600">
+<video src="screenshots/demo.mp4" width="300" height="600" controls preload></video>
 </p>
 
 # Getting started
