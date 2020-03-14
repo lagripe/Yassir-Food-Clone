@@ -24,6 +24,13 @@ class CustomStyle {
         fontWeight: FontWeight.w700,
         color: selectedTabColor);
   }
+  static TextStyle contentBlackStyle() {
+    return TextStyle(
+        fontSize: 18,
+        fontFamily: "Sofia",
+        fontWeight: FontWeight.w700,
+        color: Colors.black);
+  }
 
   static TextStyle contentStyle() {
     return TextStyle(
