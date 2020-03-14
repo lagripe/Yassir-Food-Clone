@@ -4,7 +4,7 @@ This app is a clone of the original [YASSIR Food](https://play.google.com/store/
 # Show me some ❤️ and star the repo to support the project.
 
 # Note
-- The data used within the app is static & generated one
+- The data used within the app is static & a generated one
 - This repository is still under development and I will continue to add more features to it.
 
 # Screenshots
