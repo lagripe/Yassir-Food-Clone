@@ -1,46 +1,63 @@
 import 'package:flutter/material.dart';
 import 'package:yassir_food_prototype/config/style.dart';
-class ErrorWidgets{
-  static Widget empty_or_notFound(BuildContext context,String header,String subHeader,String asset) {
+
+class ErrorWidgets {
+  static Widget error(
+      {BuildContext context,
+      String header,
+      String subHeader,
+      String asset,
+      String searchKeyword = ""}) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-      color: CustomStyle.scaffoldBackgroundColor,
-      child: Column(
-        children: <Widget>[
-          Flexible(
-            child: Container(),
-            flex: 1,
+    return SingleChildScrollView(
+      physics: NeverScrollableScrollPhysics(),
+      child: Container(
+        height: size.height - 120,
+        width: size.width,
+        color: CustomStyle.scaffoldBackgroundColor,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Image(
+                image: AssetImage("assets/img/$asset.png"),
+                width: size.width / 2.5,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                header,
+                style: CustomStyle.contentRedStyle(),
+              ),
+              searchKeyword.length > 2
+                  ? Text(
+                      '"$searchKeyword"',
+                      style: CustomStyle.contentBlackStyle(),
+                    )
+                  : Container(),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                subHeader,
+                style: CustomStyle.contentStyle(),
+                textAlign: TextAlign.center,
+              )
+            ],
           ),
-          Flexible(
-              flex: 2,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Image(
-                    image: AssetImage("assets/img/$asset.png"),
-                    width: size.width / 2.5,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    header,
-                    style: CustomStyle.contentRedStyle(),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    subHeader,
-                    style: CustomStyle.contentStyle(),
-                    textAlign: TextAlign.center,
-                  )
-                ],
-              )),
-        ],
+        ),
       ),
     );
   }
 
-  static noImplementation() => Scaffold(body: Container(child: Center(child: Text("Not implemented yet!"),),),);
+  static noImplementation() => Scaffold(
+        body: Container(
+          child: Center(
+            child: Text("Not implemented yet!"),
+          ),
+        ),
+      );
 }
