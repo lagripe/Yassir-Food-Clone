@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:yassir_food_prototype/components/Separator.dart';
-import 'package:yassir_food_prototype/config/classes.dart';
 import 'package:yassir_food_prototype/config/manager.dart';
 import 'package:yassir_food_prototype/config/style.dart';
 import 'package:yassir_food_prototype/pages/RestaurantPage.dart';
