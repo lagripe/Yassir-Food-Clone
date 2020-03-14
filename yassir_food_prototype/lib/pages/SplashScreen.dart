@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:yassir_food_prototype/config/manager.dart';
 import 'package:yassir_food_prototype/config/style.dart';
-
 import 'HomePage.dart';
 
 class SplashScreen extends StatefulWidget {

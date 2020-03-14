@@ -17,8 +17,11 @@ class _CartTabViewItemState extends State<CartTabViewItem> {
   @override
   Widget build(BuildContext context) {
     return StaticData.cart.orders.length == 0
-        ? ErrorWidgets.empty_or_notFound(context, "Your cart is empty",
-            "Your cart is empty. Kindly add something from menu", "burger")
+        ? ErrorWidgets.error(
+            context: context,
+            header: "Your cart is empty",
+            subHeader: "Your cart is empty. Kindly add something from menu",
+            asset: "burger")
         : SingleChildScrollView(
             child: Column(
               children: <Widget>[
@@ -385,15 +388,16 @@ class _CartTabViewItemState extends State<CartTabViewItem> {
                       FlatButton(
                         color: Colors.black,
                         child: Text("YES"),
-                        onPressed: () { _removeOrder(index);Navigator.of(context).pop();},
+                        onPressed: () {
+                          _removeOrder(index);
+                          Navigator.of(context).pop();
+                        },
                       ),
                       FlatButton(
-                        color: Colors.red[900],
-                        child: Text("NO"),
-                        onPressed: () => Navigator.of(context).pop()
-                      ),
+                          color: Colors.red[900],
+                          child: Text("NO"),
+                          onPressed: () => Navigator.of(context).pop()),
                     ],
-                    
                   );
                 }),
             child: Row(

@@ -193,14 +193,17 @@ class _MaklaTabViewItemState extends State<MaklaTabViewItem> {
                   );
                 });
           } else {
-            return ErrorWidgets.empty_or_notFound(context,"No restaurants available","No restaurants available in your location, please \n check with some other locations","shop");
+            return ErrorWidgets.error(
+                context: context,
+                header: "No restaurants available",
+                subHeader:
+                    "No restaurants available in your location, please check with some other locations",
+                asset: "shop");
           }
         },
       ),
     );
   }
-
-  
 
   Widget getRate(double rate) {
     int count = rate.floor();
