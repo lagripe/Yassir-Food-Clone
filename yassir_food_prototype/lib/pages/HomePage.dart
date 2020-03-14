@@ -7,7 +7,6 @@ import 'package:yassir_food_prototype/components/errorWidgets.dart';
 import 'package:yassir_food_prototype/components/myAccountTabViewItem.dart';
 import 'package:yassir_food_prototype/config/style.dart';
 import 'package:yassir_food_prototype/components/MaklaTabViewItem.dart';
-import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 
 import '../staticData.dart';
 
@@ -33,7 +32,10 @@ class _HomePageState extends State<HomePage>
     _searchController.addListener(
         () => setState(() => searchKeyword = _searchController.text));
   }
-
+  CustomTab _cartTab = CustomTab(
+    title: "Cart",
+    icon: "assets/img/cart.png",
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,10 +116,7 @@ class _HomePageState extends State<HomePage>
               title: "Explore",
               icon: "assets/img/explore.png",
             ),
-            CustomTab(
-              title: "Cart",
-              icon: "assets/img/cart.png",
-            ),
+            _cartTab,
             CustomTab(
               title: "Account",
               icon: "assets/img/account.png",
