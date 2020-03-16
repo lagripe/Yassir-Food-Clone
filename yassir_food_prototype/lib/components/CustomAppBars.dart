@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:yassir_food_prototype/config/style.dart';
+import 'package:yassir_food_prototype/pages/FilterPage.dart';
 
 class CustomAppBars {
-  static AppBar maklaAppBar(String header, String location) {
+  static AppBar maklaAppBar(String header, String location,
+      {BuildContext context}) {
     return AppBar(
       automaticallyImplyLeading: false,
       title: Container(
@@ -25,31 +27,35 @@ class CustomAppBars {
       actions: <Widget>[
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(5),
-            child: Container(
-                color: CustomStyle.scaffoldBackgroundColor,
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        "Categories",
-                        style:
-                            TextStyle(color: Colors.black, fontFamily: "Sofia"),
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      ImageIcon(
-                        AssetImage("assets/img/filter.png"),
-                        color: Colors.black,
-                      )
-                    ],
-                  ),
-                )),
+          child: InkWell(
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => FilterPage())),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(5),
+              child: Container(
+                  color: CustomStyle.scaffoldBackgroundColor,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          "Categories",
+                          style: TextStyle(
+                              color: Colors.black, fontFamily: "Sofia"),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        ImageIcon(
+                          AssetImage("assets/img/filter.png"),
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                  )),
+            ),
           ),
         ),
       ],

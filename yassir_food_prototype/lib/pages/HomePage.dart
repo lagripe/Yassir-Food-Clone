@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage>
     _searchController.addListener(
         () => setState(() => searchKeyword = _searchController.text));
   }
+
   CustomTab _cartTab = CustomTab(
     title: "Cart",
     icon: "assets/img/cart.png",
@@ -40,7 +41,7 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _currentIndex == 0
-          ? CustomAppBars.maklaAppBar("header", "location")
+          ? CustomAppBars.maklaAppBar("header", "location", context: context)
           : _currentIndex == 1
               ? CustomAppBars.exploreAppBar(_searchController)
               : _currentIndex == 2

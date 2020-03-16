@@ -58,6 +58,10 @@ class MyAccountItem {
       @required this.clickable,
       @required this.replacement,
       @required this.colored,
-      @required this.callback
-      });
+      @required this.callback});
+}
+
+class Address {
+  String name, adr;
+  Address({@required this.name, @required this.adr});
 }
