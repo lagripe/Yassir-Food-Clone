@@ -12,7 +12,7 @@ class ErrorWidgets {
     return SingleChildScrollView(
       physics: NeverScrollableScrollPhysics(),
       child: Container(
-        height: size.height - 120,
+        height: size.height,
         width: size.width,
         color: CustomStyle.scaffoldBackgroundColor,
         child: Padding(
